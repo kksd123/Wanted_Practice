@@ -2,19 +2,10 @@
 #include <iostream>
 
 
-NameCard::NameCard(const char* _name, const char* _phoneNum, const char* _email, const char* _job)
+NameCard::NameCard(const NameCard& other)
 {
-	m_name = new char[strlen(_name) + 1];
-	strcpy_s(m_name, strlen(_name) + 1, _name);
-
-	m_phoneNumber = new char[strlen(_phoneNum) + 1];
-	strcpy_s(m_phoneNumber, strlen(_phoneNum) + 1, _phoneNum);
-
-	m_email = new char[strlen(_email) + 1];
-	strcpy_s(m_email, strlen(_email) + 1, _email);
-
-	m_job = new char[strlen(_job) + 1];
-	strcpy_s(m_job, strlen(_job) + 1, _job);
+	CopyData(other.m_name, other.m_phoneNumber,
+		other.m_email, other.m_job);
 }
 
 NameCard::~NameCard()
@@ -27,6 +18,24 @@ NameCard::~NameCard()
 	m_email = nullptr;
 	delete[] m_job;
 	m_job = nullptr;
+}
+
+void NameCard::CopyData(const char* name,
+	const char* phone,
+	const char* email,
+	const char* job)
+{
+	m_name = new char[strlen(name) + 1];
+	strcpy_s(m_name, strlen(name) + 1, name);
+
+	m_phoneNumber = new char[strlen(phone) + 1];
+	strcpy_s(m_phoneNumber, strlen(phone) + 1, phone);
+
+	m_email = new char[strlen(email) + 1];
+	strcpy_s(m_email, strlen(email) + 1, email);
+
+	m_job = new char[strlen(job) + 1];
+	strcpy_s(m_job, strlen(job) + 1, job);
 }
 
 void NameCard::ShowData() const

@@ -36,7 +36,8 @@ void NameCardInterface::CreateCard(
 {
     DestroyCard(index); // 기존 것 제거
 
-    m_nameCards[index] = new NameCard(name, phone, email, job);
+    m_nameCards[index] = new NameCard();
+	m_nameCards[index]->CopyData(name, phone, email, job);
 }
 
 void NameCardInterface::RecvData()
