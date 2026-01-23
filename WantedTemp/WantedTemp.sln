@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Practice1_2_printer", "Prac
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Practice1_3__Rectangle", "Practice1_3__Rectangle\Practice1_3__Rectangle.vcxproj", "{A43AB4B4-87A7-42F5-942B-EFF47BD362A7}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Practice1_4_NameCard", "Practice1_4_NameCard\Practice1_4_NameCard.vcxproj", "{A5AF5EA0-7D40-4B45-A641-584B074A2386}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{A43AB4B4-87A7-42F5-942B-EFF47BD362A7}.Release|x64.Build.0 = Release|x64
 		{A43AB4B4-87A7-42F5-942B-EFF47BD362A7}.Release|x86.ActiveCfg = Release|Win32
 		{A43AB4B4-87A7-42F5-942B-EFF47BD362A7}.Release|x86.Build.0 = Release|Win32
+		{A5AF5EA0-7D40-4B45-A641-584B074A2386}.Debug|x64.ActiveCfg = Debug|x64
+		{A5AF5EA0-7D40-4B45-A641-584B074A2386}.Debug|x64.Build.0 = Debug|x64
+		{A5AF5EA0-7D40-4B45-A641-584B074A2386}.Debug|x86.ActiveCfg = Debug|Win32
+		{A5AF5EA0-7D40-4B45-A641-584B074A2386}.Debug|x86.Build.0 = Debug|Win32
+		{A5AF5EA0-7D40-4B45-A641-584B074A2386}.Release|x64.ActiveCfg = Release|x64
+		{A5AF5EA0-7D40-4B45-A641-584B074A2386}.Release|x64.Build.0 = Release|x64
+		{A5AF5EA0-7D40-4B45-A641-584B074A2386}.Release|x86.ActiveCfg = Release|Win32
+		{A5AF5EA0-7D40-4B45-A641-584B074A2386}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
