@@ -4,26 +4,26 @@
 
 class NameCardInterface
 {
-public: 
-	NameCardInterface(const NameCardInterface&) = delete;
-	NameCardInterface& operator=(const NameCardInterface&) = delete;
-	NameCardInterface()
-	{
-		//√ ±‚»≠
-		for (int i = 0; i < 3; ++i)
-		{
-			m_nameCards[i] = nullptr;
-		}
-	}
+public:
+    NameCardInterface();
+    ~NameCardInterface();
 
-	~NameCardInterface();
-	
-	void RecvData();
+    NameCardInterface(const NameCardInterface&) = delete;
+    NameCardInterface& operator=(const NameCardInterface&) = delete;
+
+    void RecvData();
 
 private:
-	void PrintData();
+    void CreateCard(int index,
+        const char* name,
+        const char* phone,
+        const char* email,
+        const char* job);
+
+    void DestroyCard(int index);
+    void DestroyAll();
+    void PrintData() const;
 
 private:
-	NameCard* m_nameCards[3];
+    NameCard* m_nameCards[3];
 };
-

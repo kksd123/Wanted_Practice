@@ -14,11 +14,11 @@ int main()
 	//NameCard jang("Jane Se Yun", "010-000-0000", "abd@def.com", "Lecturer");
 	//jang.ShowData();
 
-
-	NameCardInterface cards;
-
-	cards.RecvData();
-	std::cin.get();
+	// crt 버그 때문에 임의로 {} 
+	{
+		NameCardInterface cards;
+		cards.RecvData();
+	}
 	std::cin.get();
 
 	_CrtDumpMemoryLeaks();
