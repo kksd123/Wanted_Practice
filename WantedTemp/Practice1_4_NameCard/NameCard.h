@@ -7,7 +7,9 @@ public:
 		const char* _email,
 		const char* _job);
 	~NameCard();
-	void ShowData();
+	NameCard(const NameCard&) = delete;
+	NameCard& operator=(const NameCard&) = delete;
+	void ShowData() const;
 
 private:
 	char* m_name = nullptr;

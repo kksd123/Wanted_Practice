@@ -1,6 +1,7 @@
 #include "NameCard.h"
 #include <iostream>
 
+
 NameCard::NameCard(const char* _name, const char* _phoneNum, const char* _email, const char* _job)
 {
 	m_name = new char[strlen(_name) + 1];
@@ -19,12 +20,16 @@ NameCard::NameCard(const char* _name, const char* _phoneNum, const char* _email,
 NameCard::~NameCard()
 {
 	delete[] m_name;
+	m_name = nullptr;
 	delete[] m_phoneNumber;
+	m_phoneNumber = nullptr;
 	delete[] m_email;
+	m_email = nullptr;
 	delete[] m_job;
+	m_job = nullptr;
 }
 
-void NameCard::ShowData()
+void NameCard::ShowData() const
 {
 	std::cout << "이    름:" << m_name << std::endl;
 	std::cout << "전화번호:" << m_phoneNumber << std::endl;
