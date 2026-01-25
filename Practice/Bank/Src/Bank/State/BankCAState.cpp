@@ -7,12 +7,36 @@ BankStateType BankCAState::GetState() const
 
 void BankCAState::Enter(const BankStateParam*)
 {
+	std::cout << "이름을 입력해 주세요" << std::endl;
+
+	char name[100] = {};
+	std::cin >> name;
+	Bank* bank = GetFsm()->GetBank();
+	bank->CreateAccount(name);
+
+	m_waiting = true;
+	m_elapsed = 0.0f;
+
+	std::cout << "2초후 또는 BackSpace클릭시 메뉴로 이동합니다.\n";
 }
 
 void BankCAState::Step(float dt)
 {
+	if (m_waiting == false)
+		return;
+
+	float clampedDt = dt > 0.1f ? 0.1f : dt;
+
+	m_elapsed += clampedDt;
+
+	if (m_elapsed >= 2.0f || GetEngine().GetKeyDown(VK_BACK))
+	{
+		m_waiting = false;
+		GetFsm()->ChangeState(BankStateType::Idle, nullptr);
+	}
 }
 
 void BankCAState::Leave(BankStateType type)
 {
+	BankStateBase::Leave(type);
 }

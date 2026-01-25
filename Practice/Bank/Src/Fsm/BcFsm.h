@@ -30,6 +30,7 @@ protected:
 			delete state.second;
 	}
 
+public:
 	// 상태 저장
 	void AddState(StateBase* state)
 	{

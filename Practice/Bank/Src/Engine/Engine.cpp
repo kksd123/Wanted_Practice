@@ -80,6 +80,11 @@ namespace Wanted
 		isQuit = true;
 	}
 
+	void Engine::SetTickCallback(TickCallback cb)
+	{
+		m_tick = std::move(cb);
+	}
+
 	bool Engine::GetKeyDown(int keyCode)
 	{
 		return keyStates[keyCode].isKeyDown
@@ -110,9 +115,14 @@ namespace Wanted
 
 	void Engine::Tick(float deltaTime)
 	{
-		std::cout
+		/*std::cout
 			<< "DeltaTime: " << deltaTime
-			<< ", FPS: " << (1.0f / deltaTime) << "\n";
+			<< ", FPS: " << (1.0f / deltaTime) << "\n";*/
+
+		if (m_tick)
+		{
+			m_tick(deltaTime);
+		}
 
 		// ESC키 눌리면 종료.
 		if (GetKeyDown(VK_ESCAPE))

@@ -1,8 +1,8 @@
 #include <iostream>
-#include "Engine/Engine.h"
+#include "Bank/Bank.h"
 
 int main()
 {
-	Wanted::Engine engine;
-	engine.Run();
+	Bank bank;
+	bank.StartBank();
 }

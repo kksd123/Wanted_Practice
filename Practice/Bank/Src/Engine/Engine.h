@@ -1,4 +1,5 @@
 #pragma once
+#include <functional>
 
 namespace Wanted
 {
@@ -26,6 +27,10 @@ namespace Wanted
 		// Engine Quit
 		void QuitEngine();
 
+		// Tick Callback
+		using TickCallback = std::function<void(float)>;
+		void SetTickCallback(TickCallback cb);
+
 		// 입력 확인 함수
 		// 이전에 입력이 안됐는데, 현재 입력이 됐으면 1번 호출
 		bool GetKeyDown(int keyCode);
@@ -47,6 +52,8 @@ namespace Wanted
 	private :
 		//엔진 종료 Flag
 		bool isQuit = false;
+
+		TickCallback m_tick;
 
 		// 키 상태 저장용 배열 255개면 모든 키를 받을수 있다고함...(게임패드, 키보드, 마우스 etc...)
 		KeyState keyStates[255] = {};
