@@ -7,7 +7,8 @@ class Bank
 	Bank();
 	~Bank();
 
-private:
-	Account* m_accounts;
-};
+	void StartBank();
 
+private:
+	Account* m_accounts[100];
+};

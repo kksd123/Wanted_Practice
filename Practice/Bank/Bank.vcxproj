@@ -92,6 +92,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -106,6 +107,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -118,6 +120,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -132,6 +135,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,13 +143,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Account.cpp" />
-    <ClCompile Include="Bank.cpp" />
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Src\Bank\State\BankInquireState.cpp" />
+    <ClCompile Include="Src\Bank\State\BankWithdrawState.cpp" />
+    <ClCompile Include="Src\Bank\State\BankDepositState.cpp" />
+    <ClCompile Include="Src\Bank\State\BankCAState.cpp" />
+    <ClCompile Include="Src\Bank\State\BankIdleState.cpp" />
+    <ClCompile Include="Src\Bank\BankFsm.cpp" />
+    <ClCompile Include="Src\Bank\Bank.cpp" />
+    <ClCompile Include="Src\Engine\Engine.cpp" />
+    <ClCompile Include="Src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Account.h" />
-    <ClInclude Include="Bank.h" />
+    <ClInclude Include="Src\Bank\State\BankInquireState.h" />
+    <ClInclude Include="Src\Bank\State\BankWithdrawState.h" />
+    <ClInclude Include="Src\Bank\State\BankDepositState.h" />
+    <ClInclude Include="Src\Bank\State\BankCAState.h" />
+    <ClInclude Include="Src\Bank\State\BankIdleState.h" />
+    <ClInclude Include="Src\Bank\State\BankStateBase.h" />
+    <ClInclude Include="Src\Bank\BankFsm.h" />
+    <ClInclude Include="Src\Bank\BankStates.h" />
+    <ClInclude Include="Src\Common\ClientType.h" />
+    <ClInclude Include="Src\Engine\Engine.h" />
+    <ClInclude Include="Src\Fsm\BcFsm.h" />
+    <ClInclude Include="Src\Bank\Bank.h" />
+    <ClInclude Include="Src\Fsm\FsmState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
