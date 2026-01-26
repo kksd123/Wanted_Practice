@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{89f49abc-8d34-4ee2-b73d-24d9fa173ec8}</ProjectGuid>
-    <RootNamespace>Bank</RootNamespace>
+    <ProjectGuid>{a43ab4b4-87a7-42f5-942b-eff47bd362a7}</ProjectGuid>
+    <RootNamespace>Practice1_3__Rectangle</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -92,7 +92,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -107,7 +106,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -120,7 +118,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -135,7 +132,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,36 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Src\Bank\DonationAccount.cpp" />
-    <ClCompile Include="Src\Bank\CreditAccount.cpp" />
-    <ClCompile Include="Src\Bank\Account.cpp" />
-    <ClCompile Include="Src\Bank\State\BankInquireState.cpp" />
-    <ClCompile Include="Src\Bank\State\BankWithdrawState.cpp" />
-    <ClCompile Include="Src\Bank\State\BankDepositState.cpp" />
-    <ClCompile Include="Src\Bank\State\BankCAState.cpp" />
-    <ClCompile Include="Src\Bank\State\BankIdleState.cpp" />
-    <ClCompile Include="Src\Bank\BankFsm.cpp" />
-    <ClCompile Include="Src\Bank\Bank.cpp" />
-    <ClCompile Include="Src\Engine\Engine.cpp" />
-    <ClCompile Include="Src\Main.cpp" />
+    <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Src\Bank\DonationAccount.h" />
-    <ClInclude Include="Src\Bank\CreditAccount.h" />
-    <ClInclude Include="Src\Bank\Account.h" />
-    <ClInclude Include="Src\Bank\State\BankInquireState.h" />
-    <ClInclude Include="Src\Bank\State\BankWithdrawState.h" />
-    <ClInclude Include="Src\Bank\State\BankDepositState.h" />
-    <ClInclude Include="Src\Bank\State\BankCAState.h" />
-    <ClInclude Include="Src\Bank\State\BankIdleState.h" />
-    <ClInclude Include="Src\Bank\State\BankStateBase.h" />
-    <ClInclude Include="Src\Bank\BankFsm.h" />
-    <ClInclude Include="Src\Bank\BankStates.h" />
-    <ClInclude Include="Src\Common\ClientType.h" />
-    <ClInclude Include="Src\Engine\Engine.h" />
-    <ClInclude Include="Src\Fsm\BcFsm.h" />
-    <ClInclude Include="Src\Bank\Bank.h" />
-    <ClInclude Include="Src\Fsm\FsmState.h" />
+    <ClInclude Include="Circle.h" />
+    <ClInclude Include="Rectangle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

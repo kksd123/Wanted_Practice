@@ -4,6 +4,7 @@
 #include <iostream>
 
 class BankFsm;
+enum AccountType;
 
 #define MAX_ACCOUNTS 100
 class Bank
@@ -15,7 +16,7 @@ public:
 	void StartBank();
 	void Update(float dt);
 	bool IsValidAccount(int id);
-	bool CreateAccount(const char* name);
+	bool CreateAccount(const char* name, AccountType type);
 	void Deposit(int id, unsigned int val);
 	void Withdraw(int id, int val);
 	void Inquire();

@@ -13,7 +13,7 @@ class BankFsm : public BcFsm<BankStateType, BankStateParam>
 {
 public:
 	BankFsm(Bank* bank);
-	Bank* GetBank() const { return m_bank; }
+	inline Bank* GetBank() const { return m_bank; }
 
 	void Start();
 	void Update(float dt);

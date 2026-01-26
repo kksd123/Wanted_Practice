@@ -5,6 +5,7 @@ class FsmState
 public: 
 	virtual ~FsmState() = default;
 
+
 	virtual StateType GetState() const = 0;
 
 	virtual void Step(float dt) {}

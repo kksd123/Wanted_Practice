@@ -9,3 +9,12 @@ enum class BankStateType
 	Withdraw,
 	Inquire
 };
+
+enum AccountType
+{
+	None = 0,
+	eNormal,
+	eCredit,
+	eDonation,
+	Max
+};

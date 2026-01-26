@@ -1,6 +1,8 @@
 #include "Bank.h"
 //순환 Include 상황때문에 일단 여기로 빼긴했는데.. 수정방법 고민 필요
 #include "BankFsm.h"
+#include "CreditAccount.h"
+#include "DonationAccount.h"
 
 Bank::Bank()
 {
@@ -54,14 +56,31 @@ bool Bank::IsValidAccount(int id)
 }
 
 
-bool Bank::CreateAccount(const char* name)
+bool Bank::CreateAccount(const char* name, AccountType type)
 {
 	for (int i = 0; i < MAX_ACCOUNTS; ++i)
 	{
 		if (m_accounts[i] == nullptr)
 		{
-			m_accounts[i] = new Account();
-			m_accounts[i]->SetAccount(i + 312, name, 0);
+			switch (type)
+			{
+			case eNormal:
+				m_accounts[i] = new Account(i + 312, name, 0);
+				break;
+			case eCredit:
+				m_accounts[i] = new CreditAccount();
+				m_accounts[i]->SetAccount(i + 312, name, 0);
+				break;
+			case eDonation:
+				m_accounts[i] = new DonationAccount();
+				m_accounts[i]->SetAccount(i + 312, name, 0);
+				break;
+			default:
+				return false;
+				break;
+			}
+
+			//m_accounts[i + 1] = new Account(m_accounts[i]);
 			std::cout << "계좌가 추가되었습니다." << std::endl;
 			std::cout << "계좌번호 : " << m_accounts[i]->GetId() << std::endl;
 			std::cout << "이    름 : " << m_accounts[i]->GetName() << std::endl;
@@ -110,8 +129,15 @@ void Bank::Inquire()
 		if (m_accounts[i] == nullptr)
 			continue;
 
+
 		std::cout << "이   름:" << m_accounts[i]->GetName() << std::endl;
 		std::cout << "잔   액:" << m_accounts[i]->GetBalance() << std::endl;
+
+		if(dynamic_cast<DonationAccount*>(m_accounts[i]) != nullptr)
+		{
+			DonationAccount* donAcc = dynamic_cast<DonationAccount*>(m_accounts[i]);
+			std::cout << "기부금액:" << donAcc->GetDonationAmount() << std::endl;
+		}
 	}
 }
 

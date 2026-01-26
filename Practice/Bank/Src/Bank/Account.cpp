@@ -1,5 +1,15 @@
 #include "Account.h"
 
+Account::Account(const Account& account)
+	:m_id(account.m_id), m_name(account.m_name), m_balance(account.m_balance)
+{
+}
+
+Account::Account(int _id, const char* _name, int _balance)
+{
+	SetAccount(_id, _name, _balance);
+}
+
 Account::~Account()
 {
 	if (m_name != nullptr)
