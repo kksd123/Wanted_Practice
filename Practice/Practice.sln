@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Practice1_3_Rectangle", "Pr
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Practice1_4_NameCard", "Practice1_4_NameCard\Practice1_4_NameCard.vcxproj", "{AEEFC640-CD61-4497-8C8A-F4BCB0AEB1EB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StringClass", "StringClass\StringClass.vcxproj", "{F1734092-9985-46FB-AC99-55117E80117B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{AEEFC640-CD61-4497-8C8A-F4BCB0AEB1EB}.Release|x64.Build.0 = Release|x64
 		{AEEFC640-CD61-4497-8C8A-F4BCB0AEB1EB}.Release|x86.ActiveCfg = Release|Win32
 		{AEEFC640-CD61-4497-8C8A-F4BCB0AEB1EB}.Release|x86.Build.0 = Release|Win32
+		{F1734092-9985-46FB-AC99-55117E80117B}.Debug|x64.ActiveCfg = Debug|x64
+		{F1734092-9985-46FB-AC99-55117E80117B}.Debug|x64.Build.0 = Debug|x64
+		{F1734092-9985-46FB-AC99-55117E80117B}.Debug|x86.ActiveCfg = Debug|Win32
+		{F1734092-9985-46FB-AC99-55117E80117B}.Debug|x86.Build.0 = Debug|Win32
+		{F1734092-9985-46FB-AC99-55117E80117B}.Release|x64.ActiveCfg = Release|x64
+		{F1734092-9985-46FB-AC99-55117E80117B}.Release|x64.Build.0 = Release|x64
+		{F1734092-9985-46FB-AC99-55117E80117B}.Release|x86.ActiveCfg = Release|Win32
+		{F1734092-9985-46FB-AC99-55117E80117B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
