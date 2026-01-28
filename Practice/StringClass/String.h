@@ -18,18 +18,23 @@ public:
 	friend String operator+(const String& s1, const String& s2);
 
 
-	String operator+=(const String& str) const
+	String& operator+=(const String& str)
 	{
-		int length = strlen(str.m_text) + strlen(this->m_text) + 1;
+		int length = strlen(this->m_text) + strlen(str.m_text) + 1;
 		char* temp = new char[length];
 
+		//m_text 값 temp에 copy
 		strcpy_s(temp, length, this->m_text);
+		//temp에 str.m_text copy
 		strcat_s(temp, length, str.m_text);
 
-		String result(temp);
-		delete[] temp;
+		//이미 copy 했으니 m_text 삭제
+		delete[] m_text;
+		//m_text = temp 대입
+		m_text = temp;
 
-		return result;
+		//m_text가 바귄거니 this 참조값 반환
+		return *this;
 	}
 
 	bool operator==(const String& str) const
@@ -65,8 +70,8 @@ inline String operator+(const String& s1, const String& s2)
 	int length = strlen(s1.m_text) + strlen(s2.m_text) + 1;
 	char* temp = new char[length];
 
-	strcat_s(s1.m_text, length, s2.m_text);
 	strcpy_s(temp, length, s1.m_text);
+	strcat_s(temp, length, s2.m_text);
 
 	String result(temp);
 	delete[] temp;

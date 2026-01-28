@@ -29,7 +29,7 @@ int main()
 	std::cout << major << "\n";
 
 	String inputString;
-	std::cin >> inputString;
+	getline(std::cin, inputString);
 	//std::cin.getline >> inputString;
 
 	std::cout << "입력된 값: " << inputString << "\n";
