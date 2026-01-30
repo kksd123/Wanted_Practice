@@ -1,4 +1,5 @@
 #include "String.h"
+#include <iostream>
 
 #define _CRTDBG_MAP_ALLOC
 #include <stdlib.h>
@@ -28,11 +29,9 @@ int main()
 	
 	std::cout << major << "\n";
 
+	char* data = nullptr;
+	std::cin.getline(data, 5);
 	String inputString;
-	getline(std::cin, inputString);
-	//std::cin.getline >> inputString;
-
-	std::cout << "입력된 값: " << inputString << "\n";
 
 	_CrtDumpMemoryLeaks();
 }

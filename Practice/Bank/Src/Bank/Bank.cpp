@@ -31,6 +31,21 @@ void Bank::StartBank()
 			Update(dt);
 		});
 
+	m_engine->SetShutDownCallback([this]()
+		{
+			for (int i = 0; i < MAX_ACCOUNTS; ++i)
+			{
+				if (m_accounts[i] != nullptr)
+				{
+					m_accounts[i]->Serialize("Accounts.txt");
+				}
+				else
+				{
+					break;
+				}
+			}
+		});
+
 	m_engine->Run();
 }
 
@@ -141,7 +156,6 @@ void Bank::Inquire()
 	}
 }
 
-
 Wanted::Engine& Bank::GetEngine()
 {
 	return *m_engine;
@@ -150,6 +164,25 @@ Wanted::Engine& Bank::GetEngine()
 BankFsm& Bank::GetFsm()
 {
 	return *m_fsm;
+}
+
+
+void Bank::Deserialize(const char* path)
+{
+	FILE* file = nullptr;
+	errno_t error = fopen_s(&file, path, "rt");
+
+	// 예외처리.
+	if (!file)
+	{
+		std::cout << "Failed to open file.\n";
+		__debugbreak();
+		return;
+	}
+
+	Read(file);
+
+	fclose(file);
 }
 
 Account* Bank::FindAccount(int id)

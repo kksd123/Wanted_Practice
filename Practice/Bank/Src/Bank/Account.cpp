@@ -35,6 +35,22 @@ void Account::SetAccount(int _id, const char* _name, int _balance)
 	strcpy_s(m_name, len, _name);
 }
 
+void Account::Read(FILE* file)
+{
+	size_t read = fscanf_s(
+		file,
+		GetFileIOFormat(),
+		GetAccountType(), &m_id, &m_name, &m_balance);
+}
+
+void Account::Write(FILE* file)
+{
+	size_t writtenSize = fprintf_s(
+		file,
+		GetFileIOFormat(),
+		GetAccountType(), m_id, m_name, m_balance);
+}
+
 int Account::SetBalance(int _val)
 {
 	int result = m_balance + _val;
@@ -48,4 +64,22 @@ int Account::SetBalance(int _val)
 	m_balance = result;
 
 	return m_balance;
+}
+
+void Account::Serialize(const char* path)
+{
+	FILE* file = nullptr;
+	errno_t error = fopen_s(&file, path, "wt");
+
+	// 예외처리.
+	if (!file)
+	{
+		std::cout << "Failed to open file.\n";
+		__debugbreak();
+		return;
+	}
+
+	Write(file);
+
+	fclose(file);
 }

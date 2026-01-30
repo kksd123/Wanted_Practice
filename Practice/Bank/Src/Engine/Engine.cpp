@@ -71,6 +71,7 @@ namespace Wanted
 			}
 		}
 
+		ShutDown();
 		// Todo: 정리 작업.
 		std::cout << "Engine has been shutdown....\n";
 	}
@@ -83,6 +84,11 @@ namespace Wanted
 	void Engine::SetTickCallback(TickCallback cb)
 	{
 		m_tick = std::move(cb);
+	}
+
+	void Engine::SetShutDownCallback(ShutDownCallback cb)
+	{
+		m_shutDown = std::move(cb);
 	}
 
 	bool Engine::GetKeyDown(int keyCode)
@@ -133,5 +139,13 @@ namespace Wanted
 
 	void Engine::Draw()
 	{
+	}
+
+	void Engine::ShutDown()
+	{
+		if (m_shutDown)
+		{
+			m_shutDown();
+		}
 	}
 }

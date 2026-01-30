@@ -1,5 +1,7 @@
 #pragma once
-#include <string.h>
+#include "../Common/ClientType.h"
+#include <iostream>
+
 
 class Account
 {
@@ -14,7 +16,18 @@ public:
 	inline int GetId() { return m_id; };
 	inline const char* GetName() { return m_name; };
 	inline int GetBalance() { return m_balance; };
+
 	virtual int SetBalance(int _val);
+	virtual AccountType GetAccountType() { return AccountType::eNormal; };
+	virtual const char* GetFileIOFormat() {
+		return "AccountType=%d m_id=%d m_name=%s m_balacne=%d";
+	}
+
+	void Serialize(const char* path);
+
+protected:
+	virtual void Read(FILE* file);
+	virtual void Write(FILE* file);
 
 protected:
 	int m_id = 0;

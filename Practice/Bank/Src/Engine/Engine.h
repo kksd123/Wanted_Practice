@@ -31,6 +31,9 @@ namespace Wanted
 		using TickCallback = std::function<void(float)>;
 		void SetTickCallback(TickCallback cb);
 
+		using ShutDownCallback = std::function<void()>;
+		void SetShutDownCallback(ShutDownCallback cb);
+
 		// 입력 확인 함수
 		// 이전에 입력이 안됐는데, 현재 입력이 됐으면 1번 호출
 		bool GetKeyDown(int keyCode);
@@ -49,11 +52,16 @@ namespace Wanted
 		//그리기 함수
 		void Draw();
 
+		//종료 시점 호출 함수
+		void ShutDown();
+
 	private :
 		//엔진 종료 Flag
 		bool isQuit = false;
 
 		TickCallback m_tick;
+
+		ShutDownCallback m_shutDown;
 
 		// 키 상태 저장용 배열 255개면 모든 키를 받을수 있다고함...(게임패드, 키보드, 마우스 etc...)
 		KeyState keyStates[255] = {};

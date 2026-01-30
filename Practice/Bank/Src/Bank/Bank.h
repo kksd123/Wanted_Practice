@@ -25,6 +25,8 @@ public:
 	BankFsm& GetFsm();
 
 private:
+	void Read(FILE* file);
+	void Deserialize(const char* path);
 	Account* FindAccount(int id);
 
 private:

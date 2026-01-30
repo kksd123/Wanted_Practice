@@ -17,7 +17,6 @@ public:
 	friend std::istream& operator>>(std::istream& inStream, String& other);
 	friend String operator+(const String& s1, const String& s2);
 
-
 	String& operator+=(const String& str)
 	{
 		int length = strlen(this->m_text) + strlen(str.m_text) + 1;
@@ -62,8 +61,9 @@ inline std::ostream& operator<<(std::ostream& outStream, const String& other)
 
 inline std::istream& operator>>(std::istream& inStream, String& other)
 {
-	return std::cin >> other.m_text;
+	return  std::cin >> other.m_text;
 }
+
 
 inline String operator+(const String& s1, const String& s2)
 {
